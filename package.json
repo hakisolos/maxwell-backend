@@ -13,7 +13,8 @@
     "@supabase/supabase-js": "^2.57.2",
     "add": "^2.0.6",
     "bun": "^1.2.21",
-    "hono": "^4.9.6"
+    "hono": "^4.9.6",
+    "pm2": "^6.0.10"
   },
   "scripts": {
     "start": "pm2 start index.ts --interpreter node --name maxwell-backend --attach",
