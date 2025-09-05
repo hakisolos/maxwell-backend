@@ -16,8 +16,8 @@
     "hono": "^4.9.6"
   },
   "scripts": {
-    "start": "pm2 start index.ts --name maxwell-backend --attach",
-    "dev": "bun run index.ts",
+    "start": "pm2 start index.ts --interpreter node --name maxwell-backend --attach",
+    "dev": "node index.ts",
     "stop": "pm2 stop maxwell-backend"
   }
 }
