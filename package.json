@@ -1,0 +1,23 @@
+{
+  "name": "maxwell-backend",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.2",
+    "add": "^2.0.6",
+    "bun": "^1.2.21",
+    "hono": "^4.9.6"
+  },
+  "scripts": {
+    "start": "pm2 start index.ts --name maxwell-backend --attach",
+    "dev": "bun run index.ts",
+    "stop": "pm2 stop maxwell-backend"
+  }
+}

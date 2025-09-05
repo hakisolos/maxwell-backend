@@ -1,0 +1,7 @@
+ENDPOINTS
+
+/auth/signup works
+/auth/login works
+/api/addpoints 
+/auth/getuser
+/api/leaderboard
