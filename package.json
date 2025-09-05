@@ -17,8 +17,8 @@
     "pm2": "^6.0.10"
   },
   "scripts": {
-    "start": "pm2 start index.ts --interpreter node --name maxwell-backend --attach",
+    "start": "pm2 start index.ts --name backend --attach",
     "dev": "node index.ts",
-    "stop": "pm2 stop maxwell-backend"
+    "stop": "pm2 stop backend"
   }
 }
