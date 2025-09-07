@@ -8,6 +8,19 @@ auth.post("/signup", async (c) => {
   if (!username || !password || !wallet) {
     return c.json({ error: "incomplete credentials" }, 401);
   }
+
+  // Check for existing username
+  const { data: existingUser, error: existingUserError } = await db
+    .from("users")
+    .select("username")
+    .eq("username", username)
+    .single();
+
+  if (existingUser) {
+    // Username already exists
+    return c.json({ error: "username already exists" }, 409);
+  }
+
   const { data, error } = await db.from("users").insert([
     {
       username,
@@ -39,8 +52,6 @@ auth.post("/login", async (c) => {
   return c.json({ message: "login success", user: data });
 });
 
-
-
 auth.get("/getuser", async (c) => {
   const username = c.req.query("username");
   if (!username) {
@@ -61,4 +72,3 @@ auth.get("/getuser", async (c) => {
 });
 
 export default auth;
-
